@@ -10,7 +10,10 @@ def get_indices_of_item_weights(weights, length, limit):
     for weight in weights:
         other_weight = limit - weight
         if other_weight in cache:
-            return (weight, other_weight)
+            if cache[weight] < cache[other_weight]:
+                return (cache[weight], cache[other_weight])
+            elif cache[weight] > cache[other_weight]:
+                return (cache[other_weight], cache[weight])
 
     return None
 
