@@ -4,8 +4,8 @@ def has_negatives(a):
     """
     num_table = {}
     result = []
-    for (index, num) in enumerate(a):
-        num_table[num] = index
+    for num in a:
+        num_table[num] = None
 
     for num in num_table:
         if num > 0 and -num in num_table:
