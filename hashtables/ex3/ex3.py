@@ -2,6 +2,7 @@ def intersection(arrays):
     """
     YOUR CODE HERE
     """
+    num_arrays = len(arrays)
     numbers_table = {}
     result = []
 
@@ -13,7 +14,7 @@ def intersection(arrays):
                 numbers_table[num] += 1
 
     for (num, num_tables) in numbers_table.items():
-        if num_tables == 3:
+        if num_tables == num_arrays:
             result.append(num)
 
     return result
