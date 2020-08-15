@@ -13,8 +13,8 @@ def intersection(arrays):
             else:
                 numbers_table[num] += 1
 
-    for (num, num_tables) in numbers_table.items():
-        if num_tables == num_arrays:
+    for (num, num_appearances) in numbers_table.items():
+        if num_appearances == num_arrays:
             result.append(num)
 
     return result
