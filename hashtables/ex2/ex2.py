@@ -9,6 +9,15 @@ def reconstruct_trip(tickets, length):
     """
     YOUR CODE HERE
     """
-    # Your code here
+    ticket_cache = {}
+    for ticket in tickets:
+        ticket_cache[ticket.source] = ticket.destination
 
+    route = []
+    cur_dest = ticket_cache["NONE"]
+    while cur_dest != "NONE":
+        route.append(cur_dest)
+        cur_dest = ticket_cache[cur_dest]
+
+    route.append(cur_dest)
     return route

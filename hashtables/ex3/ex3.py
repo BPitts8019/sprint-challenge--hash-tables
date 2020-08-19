@@ -2,7 +2,20 @@ def intersection(arrays):
     """
     YOUR CODE HERE
     """
-    # Your code here
+    num_arrays = len(arrays)
+    numbers_table = {}
+    result = []
+
+    for array in arrays:
+        for num in array:
+            if num not in numbers_table:
+                numbers_table[num] = 1
+            else:
+                numbers_table[num] += 1
+
+    for (num, num_appearances) in numbers_table.items():
+        if num_appearances == num_arrays:
+            result.append(num)
 
     return result
 
